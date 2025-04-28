@@ -10,7 +10,7 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
+      height: 120,
       width: double.infinity,
       decoration: BoxDecoration(
         color: color,
@@ -19,7 +19,7 @@ class CustomCard extends StatelessWidget {
         children: [
           Container(
             color: const Color.fromARGB(255, 240, 221, 205),
-            height: 100,
+            height: 120,
             width: 80,
             child: Image.asset(item.image),
           ),

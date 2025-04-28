@@ -15,58 +15,65 @@ class PhrasesSection extends StatelessWidget {
       decoration: BoxDecoration(
         color: color,
       ),
-      child: Row(
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            
-            children: [
-              Padding(
-                padding: const EdgeInsets.only( left: 6.0),
-                child: Text(
-                  phrase.englishWord,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                   
+      child: Center(
+        child: Row(
+        
+          children: [
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only( left: 10),
+                    child: Text(
+                      phrase.englishWord,
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'Pacifico',
+                        color: Colors.white,
+                       
+                      ),
+                    ),
                   ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  phrase.tokuWord,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                   
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      phrase.tokuWord,
+                      style: TextStyle(
+                        fontSize: 20,
+                        
+                        color: Colors.white,
+                        fontFamily: 'Pacifico',
+                       
+                      ),
+                    ),
                   ),
-                ),
-              ),
-            ],
-          ),
-          const Spacer(
-            flex: 1,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 10),
-            child: IconButton(
-              color: const Color.fromARGB(255, 148, 231, 159),
-              onPressed: () {
-                final player = AudioPlayer();
-                player.play(AssetSource(phrase.audio));
-              },
-              icon: const Icon(
-                Icons.play_arrow,
-                size: 30,
-                color: Colors.white,
+                ],
               ),
             ),
-          ),
-        ],
+            const Spacer(
+              flex: 1,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 10),
+              child: IconButton(
+                color: const Color.fromARGB(255, 148, 231, 159),
+                onPressed: () {
+                  final player = AudioPlayer();
+                  player.play(AssetSource(phrase.audio));
+                },
+                icon: const Icon(
+                  Icons.play_arrow,
+                  size: 30,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
